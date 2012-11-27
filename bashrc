@@ -33,12 +33,12 @@ esac
 
 # Configure colors, if available.
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  c_bracket='\[\e[1;33m\]'
+  c_bracket='\[\e[1;34m\]'
   c_reset='\[\e[0m\]'
   c_user='\[\e[1;32m\]'
   c_path='\[\e[1;34m\]'
-  c_git_clean='\[\e[1;32m\]'
-  c_git_dirty='\[\e[1;31m\]'
+  c_git_clean='\[\e[0;32m\]'
+  c_git_dirty='\[\e[0;31m\]'
 else
   c_bracket=
   c_reset=
