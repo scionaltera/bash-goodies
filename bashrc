@@ -15,10 +15,13 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
-if [[ -f ~/.dir_colors ]]; then
-	eval `dircolors -b ~/.dir_colors`
-else
-	eval `dircolors -b /etc/DIR_COLORS`
+
+if [[ -n `which dircolors` ]]; then
+	if [[ -f ~/.dir_colors ]]; then
+		eval `dircolors -b ~/.dir_colors`
+	else
+		eval `dircolors -b /etc/DIR_COLORS`
+	fi
 fi
 
 # Change the window title of X terminals 
