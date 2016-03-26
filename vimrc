@@ -1,1 +1,2 @@
 colorscheme desert
+syntax on
