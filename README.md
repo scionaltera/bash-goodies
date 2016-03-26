@@ -9,6 +9,8 @@ For most of these, just copy them into your home directory with a dot in front o
 * bashrc - cp bashrc ~/.bashrc
 * vimrc - cp vimrc ~/.vimrc
 
+There is a simple script called `install.sh` that will do the copying for you. Please read it carefully to make sure it isn't going to overwrite anything important before you use it.
+
 ### Contribution guidelines ###
 
 These are mostly personal, just for my own use, but if you find them useful please feel free to use them. If you spot bugs or want to improve on them, feel free to fork or submit a pull request.
