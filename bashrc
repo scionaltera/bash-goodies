@@ -56,7 +56,7 @@ git_prompt ()
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
     return 0
   fi
-  git_branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
+  git_branch=$(git branch --no-color 2>/dev/null | sed -n '/^\*/s/^\* //p')
   if git diff --quiet 2>/dev/null >&2; then
     git_color="$c_git_clean"
   else
