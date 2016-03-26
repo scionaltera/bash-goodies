@@ -31,6 +31,8 @@ case ${TERM} in
 		;;
 esac
 
+alias vi="vim"
+
 # Configure colors, if available.
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_bracket='\[\e[1;34m\]'
@@ -48,7 +50,7 @@ else
   c_git_dirty=
 fi
 
-# Function to assemble the Git parsingart of our prompt.
+# Function to assemble the Git parsing part of our prompt.
 git_prompt ()
 {
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
