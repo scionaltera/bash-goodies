@@ -38,6 +38,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_bracket='\[\e[1;34m\]'
   c_reset='\[\e[0m\]'
   c_user='\[\e[1;32m\]'
+  c_root='\[\e[1;31m\]'
   c_path='\[\e[1;34m\]'
   c_git_clean='\[\e[0;36m\]'
   c_git_dirty='\[\e[0;33m\]'
@@ -45,6 +46,7 @@ else
   c_bracket=
   c_reset=
   c_user=
+  c_root=
   c_path=
   c_git_clean=
   c_git_dirty=
@@ -66,4 +68,8 @@ git_prompt ()
 }
 
 # Thy holy prompt.
-PROMPT_COMMAND='PS1="${c_user}\u@\h${c_reset} ${c_path}\w${c_reset}$(git_prompt) ${c_path}\$${c_reset} "'
+if [[ ${EUID} == 0 ]] ; then
+	PROMPT_COMMAND='PS1="${c_root}\h${c_reset} ${c_path}\W${c_reset}$(git_prompt) ${c_path}\$${c_reset} "'
+else
+	PROMPT_COMMAND='PS1="${c_user}\u@\h${c_reset} ${c_path}\w${c_reset}$(git_prompt) ${c_path}\$${c_reset} "'
+fi
