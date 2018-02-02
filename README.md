@@ -19,4 +19,4 @@ These are mostly things I wrote, but they do incorporate bits and pieces from th
 
 ### Who do I talk to? ###
 
-You can get in touch with me by sending a message through Bitbucket.
+You can get in touch with me by opening a GitHub issue on this project. Forks and pull requests are welcome, but I am not in a position to provide a lot of support.
